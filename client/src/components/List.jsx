@@ -1,16 +1,25 @@
 import React from "react";
-import ListItem from "./ListItem.jsx";
+import Oneproduct from "./OneProduct.jsx"
 
-const List = (props) => (
-  <div>
-    <h4> List Component </h4>
-    There are {props.items.length} items.
-    {props.items.map((item, index) => (
-      <div key={index}>
-        <ListItem item={item} />
-      </div>
-    ))}
-  </div>
-);
+const List = ({ items, getUpdate, handleDelete }) => {
+  return (
+    <div className="container">
+
+
+      {items.map((e, i) => {
+        return <Oneproduct e={e} key={i} getUpdate={getUpdate} index={i} handleDelete={handleDelete} />
+      })}
+
+
+
+
+
+
+
+
+
+    </div>
+  )
+};
 
 export default List;
